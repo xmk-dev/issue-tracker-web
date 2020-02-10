@@ -1,5 +1,6 @@
 {
   "name": "issue-tracker-web",
+  "homepage": "http://marcinxkaminski.github.io/issue-tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
