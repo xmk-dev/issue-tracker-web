@@ -34,6 +34,14 @@ export default (state = initialState, { type, payload }) => {
         requestError: payload,
       };
 
+    case ActionTypes.ADD_ISSUE:
+      return {
+        ...state,
+        issues: state.issues.filter(
+          (i) => (i._id !== payload._id),
+        ).concat([payload]),
+      };
+
     case ActionTypes.UPDATE_ISSUE:
       return {
         ...state,

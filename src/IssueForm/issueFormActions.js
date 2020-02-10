@@ -9,7 +9,7 @@ export const setIssueInForm = (issue) => ({
 
 export const toggleFormIsOpen = () => (dispatch) => {
   dispatch({ type: ActionTypes.TOGGLE_ISSUE_FORM });
-  dispatch(setIssueInForm({}));
+  dispatch(setIssueInForm({ title: '', description: '' }));
 };
 
 export const setIssueFormElement = (key, value) => (dispatch) => {
@@ -19,7 +19,10 @@ export const setIssueFormElement = (key, value) => (dispatch) => {
   });
 };
 
-export const submitIssueForm = (issue) => (dispatch) => {
+export const submitIssueForm = () => async (dispatch, getState) => {
+  const { issue } = getState().issueFormState;
   const func = issue._id ? updateIssue : createIssue;
-  dispatch(requestDispatch(ActionTypes.SUMBIT_ISSUE_FORM, func, issue));
+  const newIssue = await dispatch(requestDispatch(ActionTypes.SUMBIT_ISSUE_FORM, func, issue));
+  dispatch({ type: ActionTypes.ADD_ISSUE, payload: { ...newIssue } });
+  dispatch(toggleFormIsOpen());
 };

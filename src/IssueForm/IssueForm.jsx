@@ -13,7 +13,7 @@ export const IssueForm = ({
     requestStatus,
     requestError
 }) => (
-        <div className="container-fluid mw-50">
+        <div className="container-fluid">
             <Loader isLoading={requestStatus === PENDING} />
             <TextInput
                 title="Title"

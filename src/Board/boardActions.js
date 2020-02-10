@@ -13,8 +13,8 @@ export const getIssuesFromApi = () => requestDispatch(
 );
 
 export const handleIssueEdit = (issue) => (dispatch) => {
-  dispatch(setIssueInForm(issue));
   dispatch(toggleFormIsOpen());
+  dispatch(setIssueInForm(issue));
 };
 
 export const handleIssueDelete = (issue) => requestDispatch(
@@ -27,12 +27,12 @@ export const handleStateChange = (issue, incValue = 1) => (dispatch) => {
   const states = [IssuesStates.PENDING, IssuesStates.OPEN, IssuesStates.CLOSED];
   const currentIdx = states.findIndex((i) => i === issue.state);
   const newIdx = currentIdx + incValue;
+
   if (newIdx >= 0 && newIdx < states.length) {
     const newIssue = {
       ...issue,
       state: states[newIdx],
     };
-    console.log(newIssue);
     dispatch(requestDispatch(ActionTypes.UPDATE_ISSUE, updateIssue, newIssue));
   }
 };

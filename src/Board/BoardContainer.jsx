@@ -43,6 +43,7 @@ export const BoardContainer = ({
                             <BoardItem
                                 item={issue}
                                 key={`issue-${issueIdx}`}
+                                disabled={stateName === IssuesStates.CLOSED}
                                 onEdit={handleIssueEdit.bind(this, issue)}
                                 onDelete={handleIssueDelete.bind(this, issue)}
                                 nextState={handleStateChange.bind(
@@ -56,7 +57,7 @@ export const BoardContainer = ({
                 ))}
             </Board>
             {requestError && <div className="row">
-                <small className="text-danger">{requestError.message}</small>
+                <h2 className="text-danger">{requestError.message}</h2>
             </div>}
         </div>
     )

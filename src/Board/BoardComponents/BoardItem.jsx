@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { shape, string, func } from 'prop-types';
+import { shape, string, func, bool } from 'prop-types';
 
 const BoardItem = ({
     item,
@@ -7,7 +7,8 @@ const BoardItem = ({
     onDelete,
     onStateChange,
     prevState,
-    nextState
+    nextState,
+    disabled
 }) => (
         <div
             className="row justify-content-center shadow m-4 p-2 rounded bg-white">
@@ -15,7 +16,7 @@ const BoardItem = ({
                 <h4>{item.title}</h4>
                 <p>{item.description}</p>
             </div>
-            <div className="col-12 text-right">
+            {!disabled && <div className="col-12 text-right">
                 <a href="#"
                     className="text-dark"
                     onClick={onEdit}>
@@ -44,9 +45,13 @@ const BoardItem = ({
                         chevron_right
                         </i>
                 </a>
-            </div>
+            </div>}
         </div>
     );
+
+BoardItem.defaultProps = {
+    disabled: false
+};
 
 BoardItem.propTypes = {
     item: shape({
@@ -57,7 +62,8 @@ BoardItem.propTypes = {
     onEdit: func.isRequired,
     onDelete: func.isRequired,
     nextState: func.isRequired,
-    prevState: func.isRequired
+    prevState: func.isRequired,
+    disabled: bool,
 }
 
 export default memo(BoardItem);
