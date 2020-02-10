@@ -22,5 +22,33 @@ module.exports = {
     'react',
   ],
   rules: {
+    "no-underscore-dangle": "off"
   },
+  overrides: [
+    {
+      files: ["*.test.js", "*.test.jsx"],
+      rules: {
+        "no-redeclare": "off",
+        "no-unused-vars": "off",
+        "no-global-assign": "off",
+        "import/prefer-default-export": "off",
+        "react/jsx-props-no-spreading": "off",
+        "jsx-a11y/interactive-supports-focus": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "no-console": ["error", { allow: ["warn", "error"] }],
+      },
+      globals: {
+        describe: true,
+        context: true,
+        beforeEach: true,
+        afterEach: true,
+        it: true,
+        before: true,
+        after: true,
+        jest: true,
+        expect: true,
+        test: true
+      }
+    }
+  ]
 };
