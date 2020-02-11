@@ -4,28 +4,32 @@ import Lottie from 'react-lottie';
 import animationData from '../animations/loading';
 
 const Loader = ({ isLoading }) => (
-    <div>
-        {isLoading && <div style={{
-            height: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            margin: 'auto',
-            background: 'rgba(255,255,255,0.8)'
-        }}>
-            <Lottie
-                options={{ loop: true, autoplay: true, animationData }}
-                height="100px" />
-        </div>}
-    </div>
+  <div>
+    {isLoading && (
+      <div style={{
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        margin: 'auto',
+        background: 'rgba(255,255,255,0.8)',
+      }}
+      >
+        <Lottie
+          options={{ loop: true, autoplay: true, animationData }}
+          height="100px"
+        />
+      </div>
+    )}
+  </div>
 );
 
 Loader.defaultProps = {
-    isLoading: false
+  isLoading: false,
 };
 
 Loader.propTypes = {
-    isLoading: bool.isRequired
+  isLoading: bool,
 };
 
 export default memo(Loader);

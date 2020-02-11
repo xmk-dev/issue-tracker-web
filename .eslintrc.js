@@ -22,7 +22,10 @@ module.exports = {
     'react',
   ],
   rules: {
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "import/no-named-as-default": "off",
+    "react/jsx-no-bind": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   },
   overrides: [
     {

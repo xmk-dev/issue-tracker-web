@@ -10,10 +10,11 @@ const Main = () => (
       options={{
         loop: true,
         autoplay: true,
-        animationData
+        animationData,
       }}
       height="100vh"
-      style={{ position: 'fixed', zIndex: -1 }} />
+      style={{ position: 'fixed', zIndex: -1 }}
+    />
     <div className="row">
       <IssueFormContainer>
         <BoardContainer />

@@ -1,0 +1,4 @@
+src/animations/
+src/animations/*
+src/serviceWorker.js
+src/setupTests.js
