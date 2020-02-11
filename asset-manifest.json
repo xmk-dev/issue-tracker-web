@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/issue-tracker/static/js/main.ffa7dd5a.chunk.js",
+    "main.js.map": "/issue-tracker/static/js/main.ffa7dd5a.chunk.js.map",
+    "runtime-main.js": "/issue-tracker/static/js/runtime-main.ced9a44d.js",
+    "runtime-main.js.map": "/issue-tracker/static/js/runtime-main.ced9a44d.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/issue-tracker/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.4e2e5f92.chunk.js": "/issue-tracker/static/js/2.4e2e5f92.chunk.js",
+    "static/js/2.4e2e5f92.chunk.js.map": "/issue-tracker/static/js/2.4e2e5f92.chunk.js.map",
+    "index.html": "/issue-tracker/index.html",
+    "precache-manifest.316c1ee99f8cb66cb29cf446147085dc.js": "/issue-tracker/precache-manifest.316c1ee99f8cb66cb29cf446147085dc.js",
+    "service-worker.js": "/issue-tracker/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/issue-tracker/static/css/2.47e06e2e.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ced9a44d.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.4e2e5f92.chunk.js",
+    "static/js/main.ffa7dd5a.chunk.js"
+  ]
+}
