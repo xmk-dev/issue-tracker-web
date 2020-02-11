@@ -5,20 +5,32 @@ Simple issue tracker. Add your issues and change theirs' states.
 [![Known Vulnerabilities](https://snyk.io/test/github/marcinxkaminski/issue-tracker-api/badge.svg?targetFile=package.json)](https://snyk.io/test/github/marcinxkaminski/issue-tracker-web?targetFile=package.json)
 [![BCH compliance](https://bettercodehub.com/edge/badge/marcinxkaminski/issue-tracker-web?branch=master)](https://bettercodehub.com/)
 
+[Check out issue tracker API](https://github.com/marcinxkaminski/issue-tracker-api)
 
-## Development
 
-### `npm i`
+### Development
+* Install
+    ```
+    npm i
+    ```
 
-### `npm start`
+* Start
+    ```
+    npm run start
+    ```
 
 For more scripts check out package.json
 
 ### Deployment
-
-### `npm run build`
-
-### `npm run deploy`
+* Build
+    ```
+    npm run build
+    ```
+    
+* Deploy
+    ```
+    npm run deploy
+    ```
 
 ### Future work
 * Add and edit issue form validation
