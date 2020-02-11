@@ -1,7 +1,7 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 import BoardContainer from '../Board/BoardContainer';
-import animationData from '../animations/working';
+import animationData from '../animations/working.json';
 import IssueFormContainer from '../IssueForm/IssueFormContainer';
 
 const Main = () => (

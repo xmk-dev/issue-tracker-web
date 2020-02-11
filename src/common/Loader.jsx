@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { bool } from 'prop-types';
 import Lottie from 'react-lottie';
-import animationData from '../animations/loading';
+import animationData from '../animations/loading.json';
 
 const Loader = ({ isLoading }) => (
   <div>
