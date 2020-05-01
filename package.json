@@ -17,7 +17,8 @@
     "react-scripts": "^3.3.0",
     "react-sidebar": "^3.0.2",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "snyk": "^1.316.1"
   },
   "scripts": {
     "clean": "rm -rf node_modules",
@@ -30,7 +31,9 @@
     "eject": "react-scripts eject",
     "eslint": "eslint './src/**/*.{js,jsx}'",
     "eslint-fix": "eslint --fix './src/**/*.{js,jsx}'",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -63,5 +66,6 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^1.7.0",
     "redux-devtools": "^3.5.0"
-  }
+  },
+  "snyk": true
 }
