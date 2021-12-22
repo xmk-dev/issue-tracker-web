@@ -1,6 +1,6 @@
 import request from '../utils/request';
 
-export const API_BASE_URL = 'https://marcinxkaminski-issue-tracker.herokuapp.com';
+export const API_BASE_URL = 'https://issue-tracker-api-kmsnx.herokuapp.com';
 export const ISSUES_ENDPOINT = '/issues';
 export const HEADERS = {
   'Content-Type': 'application/json',
