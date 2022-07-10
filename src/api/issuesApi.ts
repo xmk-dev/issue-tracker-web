@@ -1,7 +1,7 @@
 import { HTTP_METHOD, Issue } from '../types';
 import { request } from '../utils';
 
-export const API_BASE_URL = 'http://localhost:9999' || 'https://kmsnx-issue-tracker.herokuapp.com';
+export const API_BASE_URL = 'https://kmsnx-issue-tracker.herokuapp.com';
 export const ISSUES_ENDPOINT = '/issues';
 export const HEADERS: RequestInit['headers'] = {
   'Content-Type': 'application/json',
