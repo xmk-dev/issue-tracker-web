@@ -10,4 +10,4 @@ out
 tsconfig.json
 next.config.js
 next-env.d.ts
-./src/setupTests.js
+.next/
