@@ -36,3 +36,5 @@ For more scripts check out package.json
 * Finish TypeScript migration
 * Upgrade to newer Redux properly
 * Add tests
+* Improve performance by doing issues grouping by status already in state not in Container
+* Split into smaller components
