@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
@@ -12,17 +11,12 @@ import { type BoardProps } from './types';
 
 export const BoardContainer: React.FC<BoardProps> = ({
   issues = [],
-  getIssuesFromApi,
   requestStatus,
   requestError,
   handleIssueEdit,
   handleIssueDelete,
   handleStatusChange,
 }) => {
-  useEffect(() => {
-    getIssuesFromApi();
-  }, []);
-
   const boardCols: Record<IssueStatus, Issue[]> = {
     [ISSUE_STATUS.PENDING]: [],
     [ISSUE_STATUS.OPEN]: [],
@@ -86,7 +80,6 @@ export const BoardContainer: React.FC<BoardProps> = ({
 const mapStateToProps = ({ board }: StoreState) => board;
 
 const mapDispatchToProps = {
-  getIssuesFromApi: actions.getIssuesFromApi,
   handleIssueEdit: actions.handleIssueEdit,
   handleIssueDelete: actions.handleIssueDelete,
   handleStatusChange: actions.handleStatusChange,

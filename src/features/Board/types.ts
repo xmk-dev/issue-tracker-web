@@ -7,7 +7,6 @@ export interface BoardProps {
   requestError: RequestError;
   requestStatus: RequestStatus;
   handleIssueEdit: (issue: Issue) => void;
-  getIssuesFromApi: () => Promise<unknown>;
   handleIssueDelete: (issue: Issue) => Promise<unknown>;
   handleStatusChange: (issue: Issue, incValue?: -1 | 1) => void;
 }
