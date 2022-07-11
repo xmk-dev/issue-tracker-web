@@ -16,7 +16,7 @@
     "plugin:unicorn/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:security/recommended",
-    "plugin:eslint-comments/recommended",
+    "plugin:eslint-comments/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -27,13 +27,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": [
-    "xss",
-    "prettier",
-    "no-secrets",
-    "eslint-comments",
-    "simple-import-sort"
-  ],
+  "plugins": ["xss", "prettier", "no-secrets", "eslint-comments", "simple-import-sort"],
   "rules": {
     "no-empty": "warn",
     "consistent-return": "off",
