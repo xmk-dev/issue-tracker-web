@@ -12,8 +12,19 @@ const Main = ({ isIssueFormOpen, toggleIssueFormOpen }) => (
       loop
       autoplay
       height="100vh"
+      width="100vw"
       animationData={animationData}
-      style={{ position: 'fixed', zIndex: -1, margin: 'auto', top: 0, bottom: 0 }}
+      style={{
+        position: 'fixed',
+        zIndex: -1,
+        margin: 'auto',
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        width: '100vw',
+        height: '100vh',
+      }}
     />
     <BoardContainer />
     {isIssueFormOpen && <IssueFormContainer />}

@@ -1,7 +1,7 @@
 import { type Dispatch } from 'redux';
 
 import { type HttpMethod, HTTP_METHOD } from '../types';
-import { ACTION_TYPE_SUFIX, ActionType } from '../types/actionTypes';
+import { type ActionType, ACTION_TYPE_SUFIX } from '../types/actionTypes';
 
 export const request = async <T = unknown>(
   url: string,
@@ -30,11 +30,21 @@ export const request = async <T = unknown>(
 };
 
 export const requestDispatch =
-  <T = unknown>(actionType: ActionType, function_: Function, parameter?: unknown) =>
+  <T = unknown>(
+    actionType: ActionType,
+    fetchCall: Function,
+    argument?: unknown,
+    resultActionType?: ActionType,
+  ) =>
   async (dispatch: Dispatch) => {
     try {
-      dispatch({ type: actionType, payload: parameter });
-      const data = await (parameter ? function_(parameter) : function_());
+      dispatch({ type: actionType, payload: argument });
+      const data = await (argument ? fetchCall(argument) : fetchCall());
+
+      if (resultActionType) {
+        dispatch({ type: resultActionType, payload: data });
+      }
+
       dispatch({
         type: `${actionType}${ACTION_TYPE_SUFIX.SUCCESS}`,
         payload: data,

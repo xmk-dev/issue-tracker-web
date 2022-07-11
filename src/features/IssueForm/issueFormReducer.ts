@@ -24,7 +24,6 @@ const reducer: IssueFormReducer = (state = initialState, { type, payload }) => {
     case ACTION_TYPE.SUMBIT_ISSUE_FORM:
       return {
         ...state,
-        requestStatus: REQUEST_STATUS.PENDING,
         requestError: undefined,
       };
 
@@ -47,6 +46,7 @@ const reducer: IssueFormReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isOpen: !state.isOpen,
+        requestError: undefined,
         requestStatus: REQUEST_STATUS.SUCCESS,
       };
 

@@ -26,9 +26,15 @@ export const setIssueFormElement = (key: string, value: unknown) => (dispatch: D
 
 export const submitIssueFormDispatch = (dispatch: Dispatch, getState: GetStoreState) => {
   const { issue } = getState().issueForm || {};
-  const callback = issue?.id ? updateIssue : createIssue;
+  const isNewIssue = !issue?.id;
+  const callback = isNewIssue ? createIssue : updateIssue;
   dispatch(
-    requestDispatch<Issue>(ACTION_TYPE.SUMBIT_ISSUE_FORM, callback, issue) as unknown as AnyAction,
+    requestDispatch<Issue>(
+      ACTION_TYPE.SUMBIT_ISSUE_FORM,
+      callback,
+      issue,
+      isNewIssue ? ACTION_TYPE.ADD_ISSUE : ACTION_TYPE.UPDATE_ISSUE_IN_PLACE,
+    ) as unknown as AnyAction,
   );
   dispatch(toggleIssueFormIsOpenDispatch as unknown as AnyAction);
 };

@@ -40,12 +40,19 @@ const reducer: BoardReducer = (state = initialState, { type, payload }) => {
         issues: [...state.issues, payload],
       };
 
-    case `${ACTION_TYPE.SUMBIT_ISSUE_FORM}${ACTION_TYPE_SUFIX.SUCCESS}`:
     case ACTION_TYPE.UPDATE_ISSUE:
       return {
         ...state,
-        issues: [...state.issues.filter((index) => index.id !== (payload as Issue)?.id), payload],
-        requestStatus: REQUEST_STATUS.PENDING,
+        issues: [...state.issues.filter((item) => item.id !== (payload as Issue)?.id), payload],
+        requestError: undefined,
+      };
+
+    case ACTION_TYPE.UPDATE_ISSUE_IN_PLACE:
+      return {
+        ...state,
+        issues: state.issues.map((item) =>
+          item.id !== (payload as Issue)?.id ? item : { ...item, ...payload },
+        ),
         requestError: undefined,
       };
 
@@ -61,7 +68,6 @@ const reducer: BoardReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         issues: state.issues.filter((item) => item.id !== (payload as Issue)?.id),
-        requestStatus: REQUEST_STATUS.PENDING,
         requestError: undefined,
       };
 
