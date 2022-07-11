@@ -34,13 +34,13 @@ const reducer: BoardReducer = (state = initialState, { type, payload }) => {
         requestError: payload,
       };
 
-    case `${ACTION_TYPE.SUMBIT_ISSUE_FORM}${ACTION_TYPE_SUFIX.SUCCESS}`:
     case ACTION_TYPE.ADD_ISSUE:
       return {
         ...state,
         issues: [...state.issues, payload],
       };
 
+    case `${ACTION_TYPE.SUMBIT_ISSUE_FORM}${ACTION_TYPE_SUFIX.SUCCESS}`:
     case ACTION_TYPE.UPDATE_ISSUE:
       return {
         ...state,
