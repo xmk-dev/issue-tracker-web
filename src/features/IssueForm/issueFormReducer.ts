@@ -47,6 +47,7 @@ const reducer: IssueFormReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         isOpen: !state.isOpen,
+        requestStatus: REQUEST_STATUS.SUCCESS,
       };
 
     default:
