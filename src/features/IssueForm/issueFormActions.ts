@@ -24,13 +24,14 @@ export const setIssueFormElement = (key: string, value: unknown) => (dispatch: D
   });
 };
 
-export const submitIssueFormDispatch = async (dispatch: Dispatch, getState: GetStoreState) => {
+export const submitIssueFormDispatch = (dispatch: Dispatch, getState: GetStoreState) => {
   const { issue } = getState().issueForm || {};
   const callback = issue?.id ? updateIssue : createIssue;
-  const newIssue = await dispatch(
+  // eslint-disable-next-line @typescript-eslint/await-thenable
+  dispatch(
     requestDispatch<Issue>(ACTION_TYPE.SUMBIT_ISSUE_FORM, callback, issue) as unknown as AnyAction,
   );
-  dispatch({ type: ACTION_TYPE.ADD_ISSUE, payload: { ...newIssue } });
+  // dispatch({ type: ACTION_TYPE.ADD_ISSUE, payload: newIssue });
   dispatch(toggleIssueFormIsOpenDispatch as unknown as AnyAction);
 };
 

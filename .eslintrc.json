@@ -16,7 +16,7 @@
     "plugin:unicorn/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:security/recommended",
-    "plugin:eslint-comments/recommended"
+    "plugin:eslint-comments/recommended",
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -29,17 +29,10 @@
   },
   "plugins": [
     "xss",
-    "html",
-    "sonarjs",
-    "unicorn",
-    "jsx-a11y",
-    "security",
     "prettier",
     "no-secrets",
-    "no-unsanitized",
     "eslint-comments",
-    "simple-import-sort",
-    "@typescript-eslint"
+    "simple-import-sort"
   ],
   "rules": {
     "no-empty": "warn",
@@ -112,6 +105,8 @@
     "react/jsx-props-no-spreading": "warn",
     "react/jsx-filename-extension": [2, { "extensions": [".tsx", ".jsx"] }],
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
-    "@typescript-eslint/indent": "off"
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/no-misused-promises": "warn"
   }
 }

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { connect } from 'react-redux';
 
@@ -16,7 +17,15 @@ export const BoardContainer: React.FC<BoardProps> = ({
   handleIssueEdit,
   handleIssueDelete,
   handleStatusChange,
+  fetchIssuesFromApi,
 }) => {
+  useEffect(() => {
+    if (issues.length === 0) {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
+      fetchIssuesFromApi();
+    }
+  }, []);
+
   const boardCols: Record<IssueStatus, Issue[]> = {
     [ISSUE_STATUS.PENDING]: [],
     [ISSUE_STATUS.OPEN]: [],
@@ -41,9 +50,11 @@ export const BoardContainer: React.FC<BoardProps> = ({
               minHeight: '80vh',
               background: '#FFFFFF99',
               minWidth: '300px',
+              border: '#DDDDDD 1px solid',
             }}
           >
             <h3 className="my-2 text-uppercase display-6">{colName}</h3>
+            <hr />
             {items.map((issue) => (
               <IssueCard item={issue} key={issue.id}>
                 {issue.status !== ISSUE_STATUS.CLOSED && (
@@ -81,6 +92,7 @@ const mapStateToProps = ({ board }: StoreState) => board;
 
 const mapDispatchToProps = {
   handleIssueEdit: actions.handleIssueEdit,
+  fetchIssuesFromApi: actions.getIssuesFromApi,
   handleIssueDelete: actions.handleIssueDelete,
   handleStatusChange: actions.handleStatusChange,
 };

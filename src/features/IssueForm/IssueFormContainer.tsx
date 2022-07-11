@@ -37,7 +37,10 @@ export const IssueFormContainer: React.FC<IssueFormProps> = ({
             <Form.Control
               placeholder="Enter title"
               value={title}
-              onChange={(event: any) => handleIssueElementChange('title', event.target.value)}
+              onChange={(event: any) =>
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                handleIssueElementChange('title', (event.target.value as string) || '')
+              }
             />
           </Form.Group>
           <Form.Group controlId="formIssueDescription" className="my-4">
@@ -46,7 +49,8 @@ export const IssueFormContainer: React.FC<IssueFormProps> = ({
               placeholder="Enter description"
               value={description}
               onChange={(event: any) =>
-                handleIssueElementChange('description', event.target.value || '')
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+                handleIssueElementChange('description', (event.target.value as string) || '')
               }
             />
           </Form.Group>
@@ -59,7 +63,7 @@ export const IssueFormContainer: React.FC<IssueFormProps> = ({
           <div className="d-flex mt-5 justify-content-center">
             <SimpleButton
               type={BUTTON_TYPE.SUBMIT}
-              onClick={handleSubmit}
+              onClick={() => handleSubmit()}
               materialIconName="save"
             />
             <SimpleButton onClick={toggleSibebarOpen} materialIconName="close" />
