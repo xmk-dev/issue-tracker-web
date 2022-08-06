@@ -41,7 +41,7 @@
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
-    "@types/jest": "latest",
+    "@types/jest": "28.1.6",
     "@types/react-dom": "latest",
     "bootstrap": "latest",
     "gh-pages": "latest",
