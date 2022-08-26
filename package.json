@@ -40,7 +40,7 @@
     "@reduxjs/toolkit": "^latest",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
-    "@testing-library/user-event": "latest",
+    "@testing-library/user-event": "14.4.2",
     "@types/jest": "latest",
     "@types/react-dom": "latest",
     "bootstrap": "latest",
