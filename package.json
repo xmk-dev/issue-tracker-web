@@ -47,7 +47,7 @@
     "gh-pages": "latest",
     "lottie-react": "latest",
     "react": "latest",
-    "react-bootstrap": "latest",
+    "react-bootstrap": "2.5.0",
     "react-dom": "latest",
     "react-redux": "latest",
     "react-scripts": "latest",
