@@ -1,9 +1,6 @@
 # Issue Tracker
-[DEMO](https://kmsnx.github.io/issue-tracker-web/)
 
 Simple issue tracker. Add your issues and change theirs' states.
-
-[Check out issue tracker API](https://github.com/kmsnx/issue-tracker-api)
 
 
 ### Development
